@@ -9,6 +9,9 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
     
+    // MARK: - Properties
+    var tasks: Task?
+    
     // MARK: - IBOutlets
     @IBOutlet weak var taskDueDatePicker: UIDatePicker!
     @IBOutlet weak var taskNameTextField: UITextField!
