@@ -14,10 +14,10 @@ class TaskListTableViewController: UITableViewController {
         TaskController.shared.loadFromPersistanceStore()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
 
     // MARK: - Table view data source
 
@@ -59,7 +59,7 @@ class TaskListTableViewController: UITableViewController {
             guard let index = tableView.indexPathForSelectedRow else { return }
             if let destinationVC = segue.destination as? TaskDetailViewController {
                 let taskToSend = TaskController.shared.tasks[index.row]
-                destinationVC.tasks = taskToSend
+                destinationVC.task = taskToSend
             }
         }
     }
