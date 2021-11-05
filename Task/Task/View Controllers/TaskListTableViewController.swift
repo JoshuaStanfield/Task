@@ -8,17 +8,17 @@
 import UIKit
 
 class TaskListTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskController.shared.loadFromPersistanceStore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,10 +26,13 @@ class TaskListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
 
         let task = TaskController.shared.tasks[indexPath.row]
-        cell.textLabel?.text = task.name
+        
+        cell.delegate = self
+        
+        cell.task = task
 
         return cell
     }
@@ -62,5 +65,13 @@ class TaskListTableViewController: UITableViewController {
                 destinationVC.task = taskToSend
             }
         }
+    }
+}
+
+extension TaskListTableViewController: TaskCompletionDelegate {
+    func taskCellButtonTapped(_ sender: TaskTableViewCell) {
+        guard let task = sender.task else { return }
+        TaskController.shared.toggleIsComplete(task: task)
+        sender.updateViews()
     }
 }

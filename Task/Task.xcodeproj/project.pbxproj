@@ -16,6 +16,7 @@
 		EC40AA952711033800BBCA1E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40AA942711033800BBCA1E /* TaskDetailViewController.swift */; };
 		EC40AA98271293BC00BBCA1E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40AA97271293BC00BBCA1E /* Task.swift */; };
 		EC40AA9B271294CF00BBCA1E /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40AA9A271294CF00BBCA1E /* TaskController.swift */; };
+		EC40AAA22719356E00BBCA1E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC40AAA12719356E00BBCA1E /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EC40AA942711033800BBCA1E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		EC40AA97271293BC00BBCA1E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		EC40AA9A271294CF00BBCA1E /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		EC40AAA12719356E00BBCA1E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		7EC8F553259B5AAD003641BD /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				EC40AAA02719350F00BBCA1E /* Custom Cell */,
 				EC40AA99271294B400BBCA1E /* Model Controller */,
 				EC40AA96271293AA00BBCA1E /* Model */,
 				EC40AA91271101C200BBCA1E /* View Controllers */,
@@ -122,6 +125,14 @@
 				EC40AA9A271294CF00BBCA1E /* TaskController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		EC40AAA02719350F00BBCA1E /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC40AAA12719356E00BBCA1E /* TaskTableViewCell.swift */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC40AAA22719356E00BBCA1E /* TaskTableViewCell.swift in Sources */,
 				EC40AA93271101EE00BBCA1E /* TaskListTableViewController.swift in Sources */,
 				7EC8F555259B5AAD003641BD /* AppDelegate.swift in Sources */,
 				EC40AA98271293BC00BBCA1E /* Task.swift in Sources */,

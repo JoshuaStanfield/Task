@@ -48,6 +48,6 @@ class TaskDetailViewController: UIViewController {
         taskNameTextField.text = task.name
         taskNotesTextView.text = task.notes
         taskDueDatePicker.date = task.dueDate ?? Date()
-//        self.date = task.dueDate (Not sure why the instructor added this?
+        self.date = task.dueDate //Starts the screen off with the due date on the task already.
     }
 }
